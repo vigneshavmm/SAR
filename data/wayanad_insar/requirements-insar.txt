@@ -1,0 +1,56 @@
+# Python requirements for the Wayanad landslide InSAR pipeline.
+#
+# Install into a Python 3.10+ environment (the repo's existing venv is 3.9 —
+# PyGMTSAR needs >=3.10, so create a fresh one; see WAYANAD_INSAR_README.md).
+#
+#   python3.10 -m venv .venv-insar
+#   ./.venv-insar/bin/pip install -r requirements-insar.txt
+
+# Core: classic Stack/S1/ASF API. NOT insardev-pygmtsar (a separate rewrite
+# whose method names differ). Pin to keep this pipeline's API stable.
+pygmtsar==2025.4.8.post1
+
+# SLC search + download from ASF (NASA Earthdata).
+asf_search
+
+# Fallback orbit (.EOF) downloader if the s1orbits.insar.dev mirror misbehaves.
+sentineleof
+
+# The following are pulled in transitively by pygmtsar; listed for clarity.
+# Uncomment/pin only if you hit a resolver conflict.
+# xarray>=2024.1.0
+# numpy
+# numba
+# pandas>=2.2
+# geopandas
+# shapely>=2.0.2
+# dask[complete]>=2024.4.1
+# distributed>=2024.1.0
+# rioxarray
+# rasterio
+# scipy
+# scikit-learn
+# statsmodels>=0.14.0
+# xgboost
+# opencv-python
+# h5netcdf>=1.3.0
+# h5py
+# tifffile
+# remotezip
+# imageio
+# tqdm
+# joblib
+# xmltodict
+# matplotlib
+
+# Optional 3D visualization (VTK export / PyVista):
+# pyvista
+# vtk
+# panel
+# jupyter_bokeh
+
+# --- System (non-pip) prerequisites — see README §Setup ---
+#   GMTSAR >= 6.7   (make_s1a_tops, ext_orb_s1a, assemble_tops, esarp)
+#   snaphu          (phase unwrapping)
+#   GMT 6.x         (underlies GMTSAR)
+# All three must be on PATH.

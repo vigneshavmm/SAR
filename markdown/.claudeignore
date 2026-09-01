@@ -1,0 +1,24 @@
+# DEPRECATED — this file does nothing.
+#
+# `.claudeignore` is NOT a Claude Code feature. It is not read, parsed, or
+# honoured by any version of Claude Code; the old `ignorePatterns` setting it
+# resembled was deprecated and replaced by the permissions system. This file was
+# additionally inert because it sat in `markdown/` rather than the repo root.
+#
+# The real, supported mechanism is `permissions.deny` with `Read(...)` rules in
+# project settings. Files matching a deny rule are excluded from file discovery
+# and search results, and reads on them are refused.
+#
+#   ->  ../.claude/settings.json     (repo root — this is the file that works)
+#
+# Design note: deny rules are evaluated BEFORE allow rules and cannot carry
+# allowlist exceptions, so the rules there are deliberately targeted at the
+# heavy data directories (data/Tirupati, data/Wayanad, outputs/, the venvs) and
+# binary extensions (*.tif, *.nc, *.pdf, *.png) rather than a blanket
+# `Read(./data/**)` — a blanket rule would also hide the InSAR pipeline source
+# in `data/wayanad_insar/*.py`, which must stay readable.
+#
+# Docs: https://code.claude.com/docs/en/settings
+#       https://code.claude.com/docs/en/permissions
+#
+# This stub is kept only as a signpost. It is safe to delete.

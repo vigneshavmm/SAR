@@ -1,0 +1,46 @@
+# --- Satellite data & geospatial files (large, regenerable) ---
+# Sentinel-1 and ancillary files
+*.tif
+*.tiff
+*.aux.xml
+*.img
+*.hdr
+
+# Data folders (regenerable from download scripts)
+Tirupati/
+Tirupati District/
+sar_downloads/
+sar_downloads_nepal/
+data/Tirupati/
+data/Tirupati District/
+
+# Keep reference data (un-ignore if it's ground truth)
+# reference_water.tif
+
+# --- Generated outputs (regenerable from analysis scripts) ---
+outputs/
+
+# --- Python environment & caches ---
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.ipynb_checkpoints/
+.pytest_cache/
+.coverage
+
+# --- IDE & OS cruft ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.env
+.env.local
