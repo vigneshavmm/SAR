@@ -6,7 +6,7 @@ from rasterio.windows import from_bounds
 from rasterio.warp import transform_bounds
 import os
 
-BBOX = [84.9500, 27.7500, 85.4500, 28.2500]  # W,S,E,N
+BBOX = [84.9500, 27.7500, 85.4500, 28.2500]  # W,S,E,N #nepal_floods
 
 PRE_FLOOD_RANGE  = "2026-07-15/2026-08-25"
 POST_FLOOD_RANGE = "2026-08-26/2026-09-10"
